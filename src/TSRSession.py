@@ -75,12 +75,12 @@ class TSRSession:
             "https://www.thesimsresource.com/downloads/captcha-image"
         )
 
-    @classmethod
-    def __saveCaptchaImage(self):
-        logger.debug("Saving captcha image")
-        captcha_image = self.__getCaptchaImage()
-        if len(captcha_image.content) == 0:
-            raise Exception("Captcha has a length of 0.")
+   # @classmethod
+   # def __saveCaptchaImage(self):
+       # logger.debug("Saving captcha image")
+       # captcha_image = self.__getCaptchaImage()
+       # if len(captcha_image.content) == 0:
+       #     raise Exception("Captcha has a length of 0.")
 
         with open(f"{CURRENT_DIR}/captcha.png", "wb") as f:
             for chunk in captcha_image.iter_content(1024 * 1024):
